@@ -11,20 +11,14 @@ export class UsersComponent implements OnInit {
 
   constructor(private service: AppService) { }
 
-  //users array that display users
-  users: User[] = []
+  users: User[] = [] //users array that display users
 
   ngOnInit(): void {
     //get users and push into users to display on users page
-    this.service.getUsers().subscribe(data => {
-      data.forEach((user: User) => {
+    this.service.getUsers().subscribe(users => {
+      users.forEach((user: User) => {
         this.users.push(user);
       })
     })
   }
-
-  onClickUser(user: User) {
-    console.log(user);
-  }
-
 }

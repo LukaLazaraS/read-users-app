@@ -15,4 +15,9 @@ export class AppService {
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.api}users`);
   }
+
+  //gets one user by id
+  getUser(id: string): Observable<User> {
+    return this.http.get<User>(`${this.api}users/${id}`);
+  }
 }
