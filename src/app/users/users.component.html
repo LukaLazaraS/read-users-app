@@ -1,0 +1,6 @@
+<main class="d-flex flex-column align-items-center">
+  <h1>USERS</h1>
+  <section class="users-container d-flex flex-column">
+    <button *ngFor="let user of users" (click)="onClickUser(user)" type="button" class="btn btn-success"><i class="bi bi-person-fill"></i>{{user.name}}</button>
+  </section>
+</main>

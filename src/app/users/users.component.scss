@@ -1,0 +1,27 @@
+main{
+  width: 100%;
+  gap: 30px;
+
+  h1 {
+    margin-top: 50px;
+    font-size: 50px;
+
+    font-weight: bold;
+  }
+
+  .users-container {
+    width: 20%;
+    gap: 10px;
+
+    button {
+      font-size: 22px;
+      height: 50px;
+      color: white;
+      
+      i {
+        margin-right: 5px;
+        font-size: 20px;
+      }
+    }
+  }
+}
