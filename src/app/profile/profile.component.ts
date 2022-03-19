@@ -10,6 +10,7 @@ import { AppService } from '../app.service';
 })
 export class ProfileComponent implements OnInit, OnDestroy {
   user!: User; //user data
+  loaded: boolean = false; //boolean for show content when respond api
   private subId: any; //observable to get id from route
 
   constructor(private service: AppService, private route: ActivatedRoute) { }
@@ -18,6 +19,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     //get user id from route and get user by user id
     this.subId = this.route.params.subscribe(params => {
       this.service.getUser(params['id']).subscribe(user => {
+        this.loaded = true;
         this.user = user;
       })
     },
