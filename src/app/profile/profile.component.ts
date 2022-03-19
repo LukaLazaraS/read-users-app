@@ -18,10 +18,11 @@ export class ProfileComponent implements OnInit, OnDestroy {
     //get user id from route and get user by user id
     this.subId = this.route.params.subscribe(params => {
       this.service.getUser(params['id']).subscribe(user => {
-        console.log(user);
         this.user = user;
       })
-    })
+    },
+      error => console.log('Eroor', error)
+    )
   }
 
   ngOnDestroy(): void {

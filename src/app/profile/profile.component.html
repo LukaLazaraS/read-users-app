@@ -22,6 +22,6 @@
         <div>{{user?.phone}}</div>
       </div>
     </div>
-    <button type="button" class="btn btn-success">{{user?.name}}'s posts</button>
+    <button type="button" [routerLink]="['/profile/posts', user?.id]" class="btn btn-success">{{user?.name}}'s posts</button>
   </section>
 </main>

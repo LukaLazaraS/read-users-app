@@ -19,6 +19,8 @@ export class UsersComponent implements OnInit {
       users.forEach((user: User) => {
         this.users.push(user);
       })
-    })
+    },
+      error => console.log('Eroor', error)
+    )
   }
 }
