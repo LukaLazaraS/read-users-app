@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Post, User } from '../app.models';
 import { AppService } from '../app.service';
@@ -8,7 +8,7 @@ import { AppService } from '../app.service';
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.scss']
 })
-export class PostsComponent implements OnInit {
+export class PostsComponent implements OnInit, OnDestroy {
   posts!: Post[]; //user's posts
   user!: User; //user data
   private subId: any; //observable to get id from route
@@ -30,6 +30,10 @@ export class PostsComponent implements OnInit {
         error => console.log('Eroor', error)
       )
     })
+  }
+
+  ngOnDestroy(): void {
+    this.subId.unsubscribe();
   }
 
 }
